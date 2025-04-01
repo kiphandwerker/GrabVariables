@@ -65,10 +65,10 @@ ods output ModelBuildingSummary = mssngSummary;
 proc phreg data=df;
 class &ClassVariables.;
 model N_Days*Status(0) = &VariableNames. /
-						selection=stepwise 
-						slentry=0.20
-                        slstay=0.20 
-                        details;
+                    selection=stepwise 
+                    slentry=0.20 
+                    slstay=0.20 
+                    details;
 run;
 ods trace off;
 ```
