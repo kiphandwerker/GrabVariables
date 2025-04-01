@@ -35,15 +35,25 @@ Note: Be sure to change your path to the appropriate location.
 ```sas
 %include "../GrabVariables.sas";
 ``` 
+
 Note: Be sure to change your path to the appropriate location.
-<li>Prove the appropriate inputs for the function and run it.
+
+<li>Provide the appropriate inputs for the function and run it.
+
+The GrabVariables() macro takes in 3 arguments:
+
+<ul>
+    <li><strong>lib:</strong> Provide the location of the library. Defaults to 'WORK'.
+    <li><strong>data:</strong> The dataset you want the variables for.
+    <li><strong>exclude:</strong> A list of variables you want to exclude from the variable selection.
+</ul>
 
 ```sas
 %let ExclusionList = 'VAR1' 'ID' 'Age' 'N_Days' 'Status';
 
 %GrabVariables(data="df", exclude= &ExclusionList);
 ```
-Note: We do not want to include this variables read into the ExclusionList variable
+
 
 <li>The variables of interest are read into VariableNames and ClassVariables within the macro. To view them, simply call them to the console.
 
